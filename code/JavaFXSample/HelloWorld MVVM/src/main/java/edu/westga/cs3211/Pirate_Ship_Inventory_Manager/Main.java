@@ -1,4 +1,4 @@
-package edu.westga.cs3211.helloworld;
+package edu.westga.cs3211.Pirate_Ship_Inventory_Manager;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ import javafx.scene.layout.Pane;
 public class Main extends Application {
 
 	private static final String WINDOW_TITLE = "Greetings";
-	private static final String GUI_FXML = "view/hello.fxml";
+	private static final String GUI_FXML = "view/loginPage.fxml";
 
 	@Override
 	public void start(Stage primaryStage) {

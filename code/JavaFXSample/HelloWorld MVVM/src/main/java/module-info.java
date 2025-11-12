@@ -2,8 +2,9 @@ module edu.westga.cs3211.helloworld {
 	requires javafx.controls;
 	requires javafx.fxml;
 	requires transitive javafx.graphics;
+	requires javafx.base;
 
-	opens edu.westga.cs3211.helloworld.view to javafx.fxml;
+	opens edu.westga.cs3211.Pirate_Ship_Inventory_Manager.view to javafx.fxml;
 
-	exports edu.westga.cs3211.helloworld;
+	exports edu.westga.cs3211.Pirate_Ship_Inventory_Manager;
 }

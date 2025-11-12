@@ -1,10 +1,10 @@
-package edu.westga.cs3211.helloworld.model;
+package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
-public class CrendtialStore {
+public class CredentialStore {
 	private final Map<String, Users> UserCrenditals = new HashMap<>();
 
 	private static String norm(String username) {
@@ -15,6 +15,11 @@ public class CrendtialStore {
 		}
 	}
 
+	/**
+	 * add users to the system
+	 * 
+	 * @param user a user being added to the system
+	 */
 	public void addUser(Users user) {
 		String key = this.norm(user.getName());
 		if (key == null || key.isEmpty())
@@ -34,6 +39,15 @@ public class CrendtialStore {
 
 		return user1.verifyPassword(password);
 
+	}
+
+	public Optional<Users> authenticate(String username, String password) {
+		if (this.VerifyCrenditals(username, password)) {
+			String key = norm(username);
+			Users user = this.UserCrenditals.get(key);
+			return Optional.of(user);
+		}
+		return Optional.empty();
 	}
 
 }

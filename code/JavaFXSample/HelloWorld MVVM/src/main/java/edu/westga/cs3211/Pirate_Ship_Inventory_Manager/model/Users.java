@@ -1,29 +1,29 @@
-package edu.westga.cs3211.helloworld.model;
+package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model;
 
 public class Users {
 	private String name;
 	private String password;
-	private String role;
+	private Role role;
 
-	public Users(String name, String password, String role) {
+	public Users(String name, String password, Role quatermaster) {
 		if (name == null) {
 			throw new IllegalArgumentException("name cannot be null");
 		}
 		if (password == null) {
 			throw new IllegalArgumentException("name cannot be null");
 		}
-		if (role == null) {
+		if (quatermaster == null) {
 			throw new IllegalArgumentException("name cannot be null");
 		}
 		this.name = name;
 		this.password = password;
-		this.role = role;
+		this.role = quatermaster;
 	}
 
-	  public boolean verifyPassword(String inputPassword) {
-	        return this.password.equals(inputPassword);
-	    }
-	  
+	public boolean verifyPassword(String inputPassword) {
+		return this.password.equals(inputPassword);
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -40,11 +40,12 @@ public class Users {
 		this.password = password;
 	}
 
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
+
 }
