@@ -12,15 +12,16 @@
      <children>
 
             <TextField fx:id="nameTextField" layoutX="144.0" layoutY="95.0" promptText="Enter your name" />
-            <Label layoutX="41.0" layoutY="94.0" prefHeight="27.0" prefWidth="81.0" text="username" textAlignment="RIGHT" />
-      <Button fx:id="submitButton" layoutX="193.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleSubmit" text="Submit" />
-      <Label fx:id="LoginGettingLabel" alignment="CENTER" layoutX="112.0" layoutY="28.0" prefHeight="17.0" prefWidth="212.0" text="Login">
+            <Label alignment="CENTER" layoutX="34.0" layoutY="26.0" prefHeight="30.0" prefWidth="399.0" text="welcome to the Pirate Inventory Manager Please Login" textAlignment="CENTER">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Label>
+      <Button fx:id="submitButton" layoutX="164.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="25.0" prefWidth="109.0" text="Submit" />
+      <Label fx:id="LoginGettingLabel" alignment="CENTER" layoutX="63.0" layoutY="56.0" prefHeight="27.0" prefWidth="310.0" text="Login" />
       <TextField fx:id="nameTextField1" layoutX="144.0" layoutY="158.0" promptText="Enter your Password" />
       <Label layoutX="41.0" layoutY="157.0" prefHeight="27.0" prefWidth="81.0" text="password" textAlignment="RIGHT" />
-      <Label fx:id="errorLabel" layoutX="155.0" layoutY="278.0" prefHeight="17.0" prefWidth="99.0" />
+      <Label fx:id="errorLabel" layoutX="92.0" layoutY="280.0" prefHeight="17.0" prefWidth="252.0" />
+      <Label layoutX="37.0" layoutY="99.0" text="username" />
          </children>
 
 

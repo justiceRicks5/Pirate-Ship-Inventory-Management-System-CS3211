@@ -4,7 +4,7 @@
   <local-check-config name="CS 3211" location="https://www.westga.edu/~astanesc/CS1302_data/checkstyle/UWG_checks.xml" type="remote" description="">
     <additional-data name="cache-file" value="false"/>
   </local-check-config>
-  <fileset name="all" enabled="true" check-config-name="Google Checks" local="false">
+  <fileset name="all" enabled="true" check-config-name="CS 3211" local="false">
     <file-match-pattern match-pattern="." include-pattern="true"/>
   </fileset>
 </fileset-config>

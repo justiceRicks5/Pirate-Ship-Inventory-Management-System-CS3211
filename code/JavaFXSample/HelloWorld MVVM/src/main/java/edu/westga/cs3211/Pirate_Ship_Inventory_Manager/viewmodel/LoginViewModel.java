@@ -2,14 +2,19 @@ package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.viewmodel;
 
 import java.util.Optional;
 
-import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.CredentialStore;
-import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.Users;
+import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.UserManagement.CredentialStore;
+import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.UserManagement.Role;
+import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.UserManagement.Users;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/** login model view data bind the view with the model
+ * @author jr00381
+ * @version fall 2025 
+ */
 public class LoginViewModel {
 
 	private final CredentialStore store;
@@ -23,27 +28,34 @@ public class LoginViewModel {
 
 	private Users currentUser;
 
+	/**
+	 * login view model consttor
+	 * 
+	 * @param store a temp crential storage
+	 */
 	public LoginViewModel(CredentialStore store) {
 		if (store == null) {
 			throw new IllegalArgumentException("CredentialStore required");
 		}
 		this.store = store;
 
-		// inputsValid := username not blank AND password not blank
-		this.inputsValid.bind(Bindings.createBooleanBinding(() -> !getUsername().isBlank() && !getPassword().isBlank(),
-				this.username, this.password));
-
-		// Disable Login button when inputs are invalid
+		this.inputsValid.bind(Bindings.createBooleanBinding(
+				() -> !this.getUsername().isBlank() && !this.getPassword().isBlank(), this.username, this.password));
+	
 		this.loginDisabled.bind(this.inputsValid.not());
 	}
 
-	/** Called by the controller when the Login button is pressed. */
+	/**
+	 * Called by the controller when the Login button is pressed.
+	 * 
+	 * @return login status
+	 */
 	public boolean login() {
-		boolean ok = this.store.VerifyCrenditals(getUsername(), getPassword());
+		boolean ok = this.store.verifyCrenditals(this.getUsername(), this.getPassword());
 		if (ok) {
-			Optional<Users> u = this.store.authenticate(getUsername(), getPassword());
-			this.currentUser = u.orElse(null);
-			this.status.set("Welcome, " + getUsername() + "!");
+			Optional<Users> user = this.store.authenticate(this.getUsername(), this.getPassword());
+			this.currentUser = user.orElse(null);
+			this.status.set("Welcome, " + this.getUsername() + "!");
 		} else {
 			this.currentUser = null;
 			this.status.set("Invalid username or password.");
@@ -51,14 +63,40 @@ public class LoginViewModel {
 		return ok;
 	}
 
+	/**
+	 * Gets the current user role.
+	 *
+	 * @return the current user role
+	 */
+	public Role getCurrentUserRole() {
+        if (this.currentUser == null) {
+            return null; 
+        }
+        return this.currentUser.getRole();
+    }
+	/**
+	 * username Property
+	 *
+	 * @return returns a property of the username
+	 */
 	public StringProperty usernameProperty() {
 		return this.username;
 	}
 
+	/**
+	 * String property for the password
+	 * 
+	 * @return password propertys
+	 */
 	public StringProperty passwordProperty() {
 		return this.password;
 	}
 
+	/**
+	 * String property for the status
+	 * 
+	 * @return status of the string
+	 */
 	public StringProperty statusProperty() {
 		return this.status;
 	}
@@ -114,12 +152,14 @@ public class LoginViewModel {
 	 * @return status of the system
 	 */
 	public String getStatus() {
-	return this.status.get();
-}
-/**
- * current user of the system 
- * @return get current system 
- */
+		return this.status.get();
+	}
+
+	/**
+	 * current user of the system
+	 * 
+	 * @return get current system
+	 */
 	public Users getCurrentUser() {
 		return this.currentUser;
 	}

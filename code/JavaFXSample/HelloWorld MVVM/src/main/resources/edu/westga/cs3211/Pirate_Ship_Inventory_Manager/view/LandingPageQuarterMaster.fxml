@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3211.Pirate_Ship_Inventory_Manager.view.LandingPageQuarterMasterCodeBehind">
+   <children>
+      <Button fx:id="addStockButton" alignment="CENTER" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#AddStock" text="ADD STOCK" textAlignment="CENTER" />
+      <Button fx:id="viewButton" layoutX="112.0" layoutY="14.0" mnemonicParsing="false" onAction="#viewStock" text="VIEW STOCK " />
+      <Label alignment="CENTER" layoutX="116.0" layoutY="88.0" prefHeight="57.0" prefWidth="369.0" text="Ahoy, Matey">
+         <font>
+            <Font name="Broadway" size="50.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="37.0" layoutY="166.0" prefHeight="200.0" prefWidth="527.0" text="Welcome aboard the Pirate Ship Inventory Manager  where your treasures be tracked and your booty be safe!" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextArea>
+      <Label fx:id="welcomeMessage" layoutX="37.0" layoutY="58.0" text="weclome" />
+      <Button layoutX="512.0" layoutY="14.0" mnemonicParsing="false" onAction="#Logout" text="Log out" />
+   </children>
+</Pane>
