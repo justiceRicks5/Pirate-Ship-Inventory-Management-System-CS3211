@@ -10,16 +10,58 @@ import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.UserManagement.User
 class TestConstructor {
 
 	@Test
-	void testConstrutorIntializeFields() {
-		String name = "Justice";
-		String password = "SecurePassword123";
-		Role role = Role.QUATERMASTER;
-		
-		Users users = new Users(name,password,role);
-		
-		assertEquals(name, users.getName(),"name should be intialzed ");
-		assertEquals(password, users.getPassword(),"name should be intialzed ");
-		assertEquals(role, users.getRole(),"name should be intialzed ");
-	}
+    void testConstructorWithValidArgumentsInitializesFields() {
+        // Arrange
+        String name = "Justice";
+        String password = "Secret123";
+        Role role = Role.QUATERMASTER;
+
+        // Act
+        Users user = new Users(name, password, role);
+
+        // Assert
+        assertEquals(name, user.getName());
+        assertEquals(password, user.getPassword());
+        assertEquals(role, user.getRole());
+    }
+
+    @Test
+    void testConstructorWithNullNameThrowsException() {
+        // Arrange
+        String name = null;
+        String password = "Secret123";
+        Role role = Role.QUATERMASTER;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Users(name, password, role);
+        });
+    }
+
+    @Test
+    void testConstructorWithNullPasswordThrowsException() {
+        // Arrange
+        String name = "Justice";
+        String password = null;
+        Role role = Role.QUATERMASTER;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Users(name, password, role);
+        });
+    }
+
+    @Test
+    void testConstructorWithNullRoleThrowsException() {
+        // Arrange
+        String name = "Justice";
+        String password = "Secret123";
+        Role role = null;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Users(name, password, role);
+        });
+    }
 
 }

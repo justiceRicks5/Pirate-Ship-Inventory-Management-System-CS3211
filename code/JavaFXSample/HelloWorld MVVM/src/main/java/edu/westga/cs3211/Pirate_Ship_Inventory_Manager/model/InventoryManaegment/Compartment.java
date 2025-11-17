@@ -1,6 +1,5 @@
 package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.InventoryManaegment;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Compartment.
  * 
@@ -95,9 +94,31 @@ public class Compartment {
 		if (this.stock == null) {
 			return this.capacity;
 		}
-		int used = (int) this.stock.getSize();
-		int free = this.capacity - used;
-		return Math.max(free, 0);
-
+		return this.capacity - (int) this.stock.getSize();
 	}
+
+	@Override
+	public String toString() {
+		return this.specialQualitys + " compartment (free: " + this.getFreeSpace() + ")";
+	}
+
+	/**
+	 * stocre srock
+	 * 
+	 * @param stock the stock
+	 * @return quality and space to confirm si the stock hcan fit
+	 */
+	public boolean canStore(Stock stock) {
+		if (stock == null) {
+			throw new IllegalArgumentException("stock cannot be null");
+		}
+
+		boolean qualityOk = this.specialQualitys == stock.getSpecialQuality();
+
+		int amountToAdd = (int) stock.getSize();
+		boolean spaceOk = this.getFreeSpace() >= amountToAdd;
+
+		return qualityOk && spaceOk;
+	}
+
 }
