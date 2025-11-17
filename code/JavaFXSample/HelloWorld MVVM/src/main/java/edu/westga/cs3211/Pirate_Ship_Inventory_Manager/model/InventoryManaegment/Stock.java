@@ -2,6 +2,7 @@ package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.InventoryManaegmen
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 // TODO: Auto-generated Javadoc
@@ -33,6 +34,7 @@ public class Stock {
 
 	/** The added time. */
 	private LocalDateTime addedTime;
+	private static final DateTimeFormatter ADDED_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 	/**
 	 * Instantiates a new stock.
@@ -50,6 +52,7 @@ public class Stock {
 		this.condition = condition;
 		this.name = name;
 		this.expirationDate = expirationDate;
+		this.addedTime = LocalDateTime.now();
 	}
 
 	/**
@@ -208,8 +211,19 @@ public class Stock {
 	 *
 	 * @return the added time
 	 */
+	public String getAddedTimeString() {
+		if (this.addedTime == null) {
+			return "";
+		}
+		return this.addedTime.format(ADDED_TIME_FORMATTER);
+	}
+
 	public LocalDateTime getAddedTime() {
-		return this.addedTime;
+		return addedTime;
+	}
+
+	public static DateTimeFormatter getAddedTimeFormatter() {
+		return ADDED_TIME_FORMATTER;
 	}
 
 }

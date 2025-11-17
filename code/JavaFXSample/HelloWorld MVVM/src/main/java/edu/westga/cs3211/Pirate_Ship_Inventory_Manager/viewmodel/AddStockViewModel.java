@@ -25,9 +25,6 @@ public class AddStockViewModel {
 	/** The inventory. */
 	private final Inventory inventory;
 
-	/** The current user. */
-	private final Users currentUser;
-
 	/** The name. */
 	private final SimpleStringProperty name = new SimpleStringProperty("");
 
@@ -60,7 +57,7 @@ public class AddStockViewModel {
 			throw new IllegalArgumentException("currentUser cannot be null");
 		}
 		this.inventory = inventory;
-		this.currentUser = currentUser;
+
 	}
 
 	/**

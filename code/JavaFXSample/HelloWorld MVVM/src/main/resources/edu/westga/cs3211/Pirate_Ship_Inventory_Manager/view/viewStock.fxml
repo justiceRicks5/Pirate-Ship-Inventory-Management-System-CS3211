@@ -9,14 +9,15 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="886.0" prefWidth="1234.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3211.Pirate_Ship_Inventory_Manager.view.ViewStockCodeBehind">
    <children>
-      <TableView fx:id="stockTableView" layoutX="91.0" layoutY="131.0" prefHeight="549.0" prefWidth="996.0">
+      <TableView fx:id="stockTableView" layoutX="91.0" layoutY="130.0" prefHeight="550.0" prefWidth="1118.0">
         <columns>
           <TableColumn fx:id="viewName" prefWidth="195.0" text="Name" />
           <TableColumn fx:id="viewSize" prefWidth="162.0" text="Size" />
             <TableColumn fx:id="viewCondtion" prefWidth="157.0" text="Condtion" />
             <TableColumn fx:id="viewSpecialQualitys" prefWidth="147.0" text="Special Quailitys" />
             <TableColumn fx:id="viewExpirationDate" minWidth="0.0" prefWidth="149.0" text="Expiration Date " />
-            <TableColumn fx:id="viewCompartment" prefWidth="185.0" text="Compartment" />
+            <TableColumn fx:id="viewCompartment" minWidth="0.0" prefWidth="148.0" text="Compartment" />
+            <TableColumn fx:id="timeAdded" prefWidth="222.0" text="time added" />
         </columns>
       </TableView>
       <Button layoutX="46.0" layoutY="27.0" mnemonicParsing="false" onAction="#returnHome" text="Home" />

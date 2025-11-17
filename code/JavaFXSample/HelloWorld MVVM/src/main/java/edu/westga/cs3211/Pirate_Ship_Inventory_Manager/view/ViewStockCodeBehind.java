@@ -27,6 +27,7 @@ import java.util.List;
 // TODO: Auto-generated Javadoc
 /**
  * The Class ViewStockCodeBehind.
+ * 
  * @author jr00381
  * @version fall 2025
  */
@@ -59,6 +60,8 @@ public class ViewStockCodeBehind {
 	/** The view compartment. */
 	@FXML
 	private TableColumn<Stock, String> viewCompartment;
+	@FXML
+	private TableColumn<Stock, String> timeAdded;
 
 	/** The inventory. */
 	private final Inventory inventory = InventoryHolder.getInventory();
@@ -80,6 +83,7 @@ public class ViewStockCodeBehind {
 		this.viewSpecialQualitys.setCellValueFactory(new PropertyValueFactory<>("specialQuality"));
 		this.viewExpirationDate.setCellValueFactory(new PropertyValueFactory<>("expirationDateString"));
 		this.viewCompartment.setCellValueFactory(new PropertyValueFactory<>("compartmentName"));
+		this.timeAdded.setCellValueFactory(new PropertyValueFactory<>("addedTimeString"));
 		this.refreshTable();
 	}
 
