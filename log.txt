@@ -1,0 +1,53 @@
+commit 139590f82d254cabb02775267b0b236c87f7813e
+Author: Justice Ricks <jr00381@my.westga.edu>
+Date:   Mon Nov 17 04:59:16 2025 -0500
+
+     FInshed project
+    
+    I added a bunch of test cases the crewmate listview isnt working but it is getting to close to due date and i am tired i also added a filter so filter through based on special qualitys
+
+commit 9620c8b7f306b3fd1dda8df4a9a1ee226e10faf6
+Author: Justice Ricks <jr00381@my.westga.edu>
+Date:   Sun Nov 16 21:55:23 2025 -0500
+
+     Added time to the view and a few test cases
+    
+    i added a time to my tbale view by using the local Date time class and incoking it to my codebehind i also createda feew test case classes
+
+commit a3ea73d405a01d2669b677ac1e6275a85692a89d
+Author: Justice Ricks <jr00381@my.westga.edu>
+Date:   Sun Nov 16 20:37:39 2025 -0500
+
+    Created a add stock and view stock page
+    
+    i added a add stock page and view stock page with working values i created a tsv file to save the stock to view stock when theapplication is closed
+
+commit 7d4f0e29ee0b00fb75e1f089982eff04a5bafc14
+Author: Justice Ricks <jr00381@my.westga.edu>
+Date:   Sat Nov 15 17:11:50 2025 -0500
+
+    Created a Pirate invetory Manager system
+    
+    in this project i have a stock class compartment classs inventory class  a speacal quality enum a condtiond enum a role enum  users classcrendital store and 5 diffrnelt pages
+
+commit 7e46a663365b1eeb5247d251026812f3614a86fa
+Author: Justice Ricks <jr00381@my.westga.edu>
+Date:   Wed Nov 12 10:55:43 2025 -0500
+
+     Added Login
+    
+    I added the login page and did a little bit of refacoring
+
+commit 447a76d43bfbc7611fe8c265c6c171aa9485b61a
+Author: Justice Ricks <jr00381@my.westga.edu>
+Date:   Mon Nov 10 19:03:11 2025 -0500
+
+     Intiial commit / Base
+    
+    created base for the project added a user class role class and a loginviewmodel
+
+commit b7e905f129a316a98a52c224fdaec2f3c526156a
+Author: justice Lindsey Ricks <jr00381@my.westga.edu>
+Date:   Mon Nov 10 09:53:44 2025 -0500
+
+    Initial commit
