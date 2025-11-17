@@ -48,6 +48,7 @@ public final class InventoryPersistenceManager {
 				if (name == null) {
 					name = "";
 				} else {
+					
 					name = name.replace("\t", " ");
 				}
 

@@ -2,6 +2,7 @@ package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.view;
 
 import java.io.IOException;
 
+import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.UserManagement.Role;
 import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.UserManagement.Users;
 import edu.westga.cs3211.Pirate_Ship_Inventory_Manager.viewmodel.LandPageViewModel;
 import javafx.event.ActionEvent;
@@ -63,37 +64,39 @@ public class LandingPageQuarterMasterCodeBehind {
 	 */
 	public void setLoggedInUser(Users user) {
 		this.username = user;
-
-		String username = "null";
 		if (user != null) {
-			username = user.getName();
+			System.out.println("LandingPageQuarterMaster: setLoggedInUser called with " + user.getName());
+			this.viewModel.setCurrentUser(user);
+		} else {
+			System.out.println("LandingPageQuarterMaster: setLoggedInUser called with null");
 		}
-
-		System.out.println("LandingPageQuarterMaster: setLoggedInUser called with " + username);
-
-		this.viewModel.setCurrentUser(user);
 	}
 
-	/**
-	 * Adds the stock.
-	 *
-	 * @param event the event
-	 */
 	@FXML
 	void addStock(ActionEvent event) {
 		try {
-			String fxmlPath = "/edu/westga/cs3211/Pirate_Ship_Inventory_Manager/view/addStockPage.fxml";
-			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+			if (this.username == null) {
+				System.out.println("No logged-in user in LandingPageQuarterMaster; sending back to login.");
+
+				FXMLLoader loader = new FXMLLoader(
+						getClass().getResource("/edu/westga/cs3211/Pirate_Ship_Inventory_Manager/view/loginPage.fxml"));
+				Parent root = loader.load();
+				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				stage.setScene(new Scene(root));
+				stage.show();
+				return;
+			}
+
+			FXMLLoader loader = new FXMLLoader(
+					getClass().getResource("/edu/westga/cs3211/Pirate_Ship_Inventory_Manager/view/AddStockPage.fxml"));
 			Parent root = loader.load();
 
 			AddStockPageCodeBehind controller = loader.getController();
 			controller.setHomeContext(this.username.getRole(), this.username);
 
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
+			stage.setScene(new Scene(root));
 			stage.show();
-
 		} catch (IOException error) {
 			error.printStackTrace();
 		}
@@ -110,9 +113,18 @@ public class LandingPageQuarterMasterCodeBehind {
 			String fxmlPath = "/edu/westga/cs3211/Pirate_Ship_Inventory_Manager/view/viewStock.fxml";
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
 			Parent root = loader.load();
+
+			ViewStockCodeBehind controller = loader.getController();
+
+			Role userRole = null;
+			if (this.username != null) {
+			    userRole = this.username.getRole();
+			}
+
+			controller.setHomeContext(userRole, this.username);
+
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
+			stage.setScene(new Scene(root));
 			stage.show();
 
 		} catch (IOException error) {

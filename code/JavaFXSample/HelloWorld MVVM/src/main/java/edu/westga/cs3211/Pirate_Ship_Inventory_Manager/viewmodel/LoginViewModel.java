@@ -64,6 +64,7 @@ public class LoginViewModel {
 		}
 		return ok;
 	}
+	
 
 	/**
 	 * Gets the current user role.

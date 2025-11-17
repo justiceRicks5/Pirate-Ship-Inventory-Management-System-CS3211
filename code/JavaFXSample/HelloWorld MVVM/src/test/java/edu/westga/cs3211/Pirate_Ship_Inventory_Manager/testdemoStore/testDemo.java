@@ -2,7 +2,6 @@ package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.testdemoStore;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.lang.reflect.Constructor;

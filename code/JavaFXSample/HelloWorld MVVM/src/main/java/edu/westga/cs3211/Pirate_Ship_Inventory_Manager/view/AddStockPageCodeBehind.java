@@ -406,6 +406,7 @@ public class AddStockPageCodeBehind {
 	void handleSubmit(ActionEvent event) {
 		Compartment selectedCompartment = this.prepareOrGetSelectedCompartment();
 		if (selectedCompartment == null) {
+			
 			return;
 		}
 
@@ -431,6 +432,7 @@ public class AddStockPageCodeBehind {
 
 		Date expirationDate = this.readExpirationDate();
 		if (this.perishable.isSelected() && expirationDate == null) {
+			
 			return;
 		}
 

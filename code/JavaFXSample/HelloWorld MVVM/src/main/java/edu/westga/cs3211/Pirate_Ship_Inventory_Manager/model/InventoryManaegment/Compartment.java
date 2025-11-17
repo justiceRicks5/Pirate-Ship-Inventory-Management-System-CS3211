@@ -1,6 +1,5 @@
 package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.InventoryManaegment;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Compartment.
  * 

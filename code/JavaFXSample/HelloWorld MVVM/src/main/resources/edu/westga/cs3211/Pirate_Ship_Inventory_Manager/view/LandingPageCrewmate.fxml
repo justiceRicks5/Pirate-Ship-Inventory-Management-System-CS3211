@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3211.Pirate_Ship_Inventory_Manager.view.LandingPageCrewmateCodeBehind">
     <children>
-      <Button fx:id="addStockButtonDefault" alignment="CENTER" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#AddStockToStockInventory" text="ADD STOCK" textAlignment="CENTER" />
+      <Button fx:id="addStockButtonDefault" alignment="CENTER" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#addStockToStockInventory" text="ADD STOCK" textAlignment="CENTER" />
       <Label alignment="CENTER" layoutX="126.0" layoutY="69.0" prefHeight="55.0" prefWidth="348.0" text="Ahoy, Matey">
          <font>
             <Font name="Broadway" size="48.0" />

@@ -13,7 +13,8 @@ import java.util.Date;
  * @version fall 2025
  */
 public class Stock {
-
+	/** The Constant ADDED_TIME_FORMATTER. */
+	private static final DateTimeFormatter ADDED_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 	/** The name. */
 	private String name;
 
@@ -32,9 +33,11 @@ public class Stock {
 	/** The compartment. */
 	private Compartment compartment;
 
+	/** The added by. */
+	private String addedBy;
+
 	/** The added time. */
 	private LocalDateTime addedTime;
-	private static final DateTimeFormatter ADDED_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 	/**
 	 * Instantiates a new stock.
@@ -218,10 +221,38 @@ public class Stock {
 		return this.addedTime.format(ADDED_TIME_FORMATTER);
 	}
 
-	public LocalDateTime getAddedTime() {
-		return addedTime;
+	/**
+	 * Gets the added by.
+	 *
+	 * @return the added by
+	 */
+	public String getAddedBy() {
+		return this.addedBy;
 	}
 
+	/**
+	 * Sets the added by.
+	 *
+	 * @param addedBy the new added by
+	 */
+	public void setAddedBy(String addedBy) {
+		this.addedBy = addedBy;
+	}
+
+	/**
+	 * Gets the added time.
+	 *
+	 * @return the added time
+	 */
+	public LocalDateTime getAddedTime() {
+		return this.addedTime;
+	}
+
+	/**
+	 * Gets the added time formatter.
+	 *
+	 * @return the added time formatter
+	 */
 	public static DateTimeFormatter getAddedTimeFormatter() {
 		return ADDED_TIME_FORMATTER;
 	}
