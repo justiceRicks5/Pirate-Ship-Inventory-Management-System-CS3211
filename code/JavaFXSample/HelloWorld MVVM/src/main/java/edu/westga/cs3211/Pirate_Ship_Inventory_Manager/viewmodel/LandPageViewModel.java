@@ -11,7 +11,7 @@ import javafx.beans.property.ReadOnlyStringWrapper;
  * @author jr00381
  * @version Fall 2025
  */
-public class LandPageQuarterMasterViewModel {
+public class LandPageViewModel {
 
     private Users currentUser;
 

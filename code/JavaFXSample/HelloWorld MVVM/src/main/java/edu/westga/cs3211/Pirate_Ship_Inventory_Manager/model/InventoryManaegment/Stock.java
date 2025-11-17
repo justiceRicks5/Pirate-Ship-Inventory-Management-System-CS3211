@@ -1,99 +1,152 @@
 package edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.InventoryManaegment;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class Stock.
+ * 
  * @author jr00381
  * @version fall 2025
  */
 public class Stock {
 
+	/** The name. */
+	private String name;
+
 	/** The size. */
 	private int size;
+
+	/** The condition. */
+	private Condtion condition;
 
 	/** The special quality. */
 	private SpecialQualitys specialQuality;
 
-	/** The condtion. */
-	private Condtion condtion;
-
-	/** The name. */
-	private String name;
-
 	/** The expiration date. */
 	private Date expirationDate;
+
+	/** The compartment. */
+	private Compartment compartment;
+
+	/** The added time. */
+	private LocalDateTime addedTime;
 
 	/**
 	 * Instantiates a new stock.
 	 *
 	 * @param size           the size
 	 * @param specialQuality the special quality
-	 * @param condtion       the condtion
+	 * @param condition      the condition
 	 * @param name           the name
 	 * @param expirationDate the expiration date
 	 */
-	public Stock(int size, SpecialQualitys specialQuality, Condtion condtion, String name, Date expirationDate) {
+	public Stock(int size, SpecialQualitys specialQuality, Condtion condition, String name, Date expirationDate) {
 		super();
 		this.size = size;
 		this.specialQuality = specialQuality;
-		this.condtion = condtion;
+		this.condition = condition;
 		this.name = name;
 		this.expirationDate = expirationDate;
 	}
 
 	/**
-	 * Gets the size.
+	 * Gets the condition.
 	 *
-	 * @return the size
+	 * @return the condition
 	 */
-	public double getSize() {
-		return this.size;
+	public Condtion getCondition() {
+		return this.condition;
 	}
 
 	/**
-	 * Sets the size.
+	 * Sets the condition.
 	 *
-	 * @param size the new size
+	 * @param condition the new condition
 	 */
-	public void setSize(int size) {
-		this.size = size;
+	public void setCondition(Condtion condition) {
+		this.condition = condition;
 	}
 
 	/**
-	 * Gets the special quality.
+	 * Gets the compartment.
 	 *
-	 * @return the special quality
+	 * @return the compartment
 	 */
-	public SpecialQualitys getSpecialQuality() {
-		return this.specialQuality;
+	public Compartment getCompartment() {
+		return this.compartment;
 	}
 
 	/**
-	 * Sets the special quality.
+	 * Sets the compartment.
 	 *
-	 * @param specialQuality the new special quality
+	 * @param compartment the new compartment
 	 */
-	public void setSpecialQuality(SpecialQualitys specialQuality) {
-		this.specialQuality = specialQuality;
+	public void setCompartment(Compartment compartment) {
+		this.compartment = compartment;
 	}
 
 	/**
-	 * Checks if is condtion.
+	 * Gets expiration date as formatted string for TableView.
 	 *
-	 * @return true, if is condtion
+	 * @return formatted expiration date or "N/A"
 	 */
-	public Condtion isCondtion() {
-		return this.condtion;
+	public String getExpirationDateString() {
+		if (this.expirationDate != null) {
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			return sdf.format(this.expirationDate);
+		}
+		return "N/A";
 	}
 
 	/**
-	 * Sets the condtion.
+	 * Sets the expiration date.
 	 *
-	 * @param condtion the new condtion
+	 * @param expirationDate the new expiration date
 	 */
-	public void setCondtion(Condtion condtion) {
-		this.condtion = condtion;
+	public void setExpirationDate(Date expirationDate) {
+		this.expirationDate = expirationDate;
+	}
+
+	/**
+	 * Gets the expiration date.
+	 *
+	 * @return the expiration date
+	 */
+	public Date getExpirationDate() {
+		return this.expirationDate;
+	}
+
+	/**
+	 * Sets the added time.
+	 *
+	 * @param addedTime the new added time
+	 */
+	public void setAddedTime(LocalDateTime addedTime) {
+		this.addedTime = addedTime;
+	}
+
+	/**
+	 * Gets compartment name for TableView.
+	 *
+	 * @return compartment name or "Not assigned"
+	 */
+	public String getCompartmentName() {
+		if (this.compartment != null) {
+			return this.compartment.toString();
+		}
+		return "Not assigned";
+	}
+
+	/**
+	 * Gets the condition.
+	 *
+	 * @return the condition
+	 */
+	public Condtion getCondtion() {
+		return this.condition;
 	}
 
 	/**
@@ -115,21 +168,48 @@ public class Stock {
 	}
 
 	/**
-	 * Gets the expiration date.
+	 * Gets the special quality.
 	 *
-	 * @return the expiration date
+	 * @return the special quality
 	 */
-	public Date getExpirationDate() {
-		return this.expirationDate;
+	public SpecialQualitys getSpecialQuality() {
+		return this.specialQuality;
 	}
 
 	/**
-	 * Sets the expiration date.
+	 * Sets the special quality.
 	 *
-	 * @param expirationDate the new expiration date
+	 * @param specialQuality the new special quality
 	 */
-	public void setExpirationDate(Date expirationDate) {
-		this.expirationDate = expirationDate;
+	public void setSpecialQuality(SpecialQualitys specialQuality) {
+		this.specialQuality = specialQuality;
+	}
+
+	/**
+	 * Gets the size.
+	 *
+	 * @return the size
+	 */
+	public int getSize() {
+		return this.size;
+	}
+
+	/**
+	 * Sets the size.
+	 *
+	 * @param size the new size
+	 */
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	/**
+	 * Gets the added time.
+	 *
+	 * @return the added time
+	 */
+	public LocalDateTime getAddedTime() {
+		return this.addedTime;
 	}
 
 }

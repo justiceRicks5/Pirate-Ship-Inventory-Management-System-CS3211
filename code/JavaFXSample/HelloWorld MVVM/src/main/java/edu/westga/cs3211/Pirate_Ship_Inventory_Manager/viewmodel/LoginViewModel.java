@@ -11,9 +11,11 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-/** login model view data bind the view with the model
+/**
+ * login model view data bind the view with the model
+ * 
  * @author jr00381
- * @version fall 2025 
+ * @version fall 2025
  */
 public class LoginViewModel {
 
@@ -41,7 +43,7 @@ public class LoginViewModel {
 
 		this.inputsValid.bind(Bindings.createBooleanBinding(
 				() -> !this.getUsername().isBlank() && !this.getPassword().isBlank(), this.username, this.password));
-	
+
 		this.loginDisabled.bind(this.inputsValid.not());
 	}
 
@@ -69,11 +71,12 @@ public class LoginViewModel {
 	 * @return the current user role
 	 */
 	public Role getCurrentUserRole() {
-        if (this.currentUser == null) {
-            return null; 
-        }
-        return this.currentUser.getRole();
-    }
+		if (this.currentUser == null) {
+			return null;
+		}
+		return this.currentUser.getRole();
+	}
+
 	/**
 	 * username Property
 	 *

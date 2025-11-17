@@ -20,7 +20,7 @@ public class LoginCodeBehind {
 
 	/** The Login getting label. */
 	@FXML
-	private Label LoginGettingLabel;
+	private Label loginGettingLabel;
 
 	/** The error label. */
 	@FXML
@@ -58,7 +58,7 @@ public class LoginCodeBehind {
 		this.nameTextField.textProperty().bindBidirectional(this.viewModel.usernameProperty());
 		this.nameTextField1.textProperty().bindBidirectional(this.viewModel.passwordProperty());
 
-		this.LoginGettingLabel.textProperty().bind(this.viewModel.statusProperty());
+		this.loginGettingLabel.textProperty().bind(this.viewModel.statusProperty());
 		this.submitButton.disableProperty().bind(this.viewModel.loginDisabledProperty());
 
 		this.errorLabel.setText("");
@@ -108,18 +108,15 @@ public class LoginCodeBehind {
 			if (role == edu.westga.cs3211.Pirate_Ship_Inventory_Manager.model.UserManagement.Role.QUATERMASTER) {
 				LandingPageQuarterMasterCodeBehind controller = loader.getController();
 				controller.setLoggedInUser(user);
-			} else {
-
-			}
-
+			} 
 			javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene()
 					.getWindow();
 			stage.setScene(new javafx.scene.Scene(root));
 			stage.show();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			this.errorLabel.setText("Error loading landing page: " + e.getClass().getSimpleName());
+		} catch (Exception error) {
+			error.printStackTrace();
+			this.errorLabel.setText("Error loading landing page: " + error.getClass().getSimpleName());
 		}
 	}
 }

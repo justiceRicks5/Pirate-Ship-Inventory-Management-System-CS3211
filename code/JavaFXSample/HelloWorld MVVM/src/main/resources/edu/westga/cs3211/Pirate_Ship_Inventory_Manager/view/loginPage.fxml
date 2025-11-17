@@ -17,7 +17,7 @@
             <Font name="System Bold" size="14.0" />
          </font></Label>
       <Button fx:id="submitButton" layoutX="164.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="25.0" prefWidth="109.0" text="Submit" />
-      <Label fx:id="LoginGettingLabel" alignment="CENTER" layoutX="63.0" layoutY="56.0" prefHeight="27.0" prefWidth="310.0" text="Login" />
+      <Label fx:id="loginGettingLabel" alignment="CENTER" layoutX="63.0" layoutY="56.0" prefHeight="27.0" prefWidth="310.0" text="Login" />
       <TextField fx:id="nameTextField1" layoutX="144.0" layoutY="158.0" promptText="Enter your Password" />
       <Label layoutX="41.0" layoutY="157.0" prefHeight="27.0" prefWidth="81.0" text="password" textAlignment="RIGHT" />
       <Label fx:id="errorLabel" layoutX="92.0" layoutY="280.0" prefHeight="17.0" prefWidth="252.0" />

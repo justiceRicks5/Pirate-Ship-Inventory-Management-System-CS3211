@@ -35,7 +35,7 @@ public class CredentialStore {
 	 * @param user a user being added to the system
 	 */
 	public void addUser(Users user) {
-		String key = this.norm(user.getName());
+		String key = CredentialStore.norm(user.getName());
 		if (key == null || key.isEmpty()) {
 			throw new IllegalArgumentException("username required");
 		}

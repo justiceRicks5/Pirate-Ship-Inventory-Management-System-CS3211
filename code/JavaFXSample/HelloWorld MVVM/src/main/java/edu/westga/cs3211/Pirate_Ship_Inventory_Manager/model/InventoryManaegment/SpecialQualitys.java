@@ -14,5 +14,7 @@ public enum SpecialQualitys {
 	/** The flammable. */
 	FLAMMABLE,
 	/** The liquid. */
-	LIQUID;
+	LIQUID,
+	/** regular **/
+	REGULAR;
 }
